@@ -1,0 +1,77 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+body {
+    font-size: 16px;
+    font-family: Verdana, sans-serif;
+}
+
+table {
+    width: 540px;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+th, td {
+    width: 180px;
+    box-sizing: border-box;
+    border: 1px solid #e9eae8;
+    padding: 8px 20px;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #f8f8f8;
+}
+
+.score {
+    text-align: right;
+}
+
+th {
+    cursor: pointer;
+}
+
+    th::after {
+        content: "\f0dc";
+        font-family: FontAwesome;
+        font-size: 12px;
+        color: #ccc;
+        float: right;
+        padding-top: 4px;
+    }
+
+    th.asc::after {
+        content: "\f0de";
+        font-family: FontAwesome;
+        color: #000;
+    }
+
+    th.desc::after {
+        content: "\f0dd";
+        font-family: FontAwesome;
+        color: #000;
+    }
+input
+{
+    box-shadow: inset;
+}

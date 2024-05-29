@@ -1,0 +1,10 @@
+﻿1. Sacar los productos de color rojo o verde (red or green), 
+ordenados por SafetyStockLevel de forma ascendente 
+para todo aquellos productos que tengan un ListPrice superior a 1.
+
+ Sacar los productos de color rojo, ordenados por nombre (name), 
+ eliminar los productos de la subcategoria 2 y 
+ aquellos que terminen en vocal o en una x.
+
+ 3. Sacar los productos ordenados por SellStartDate y luego por Color, quiero sólo aquellos que comiencen por 
+ a,b o c o que contengan una e en el nombre(name)

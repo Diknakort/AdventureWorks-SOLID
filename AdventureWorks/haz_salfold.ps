@@ -1,0 +1,12 @@
+dotnet add package Microsoft.EntityFrameworkCore.Design
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+dotnet clean
+dotnet build
+dotnet tool install --global dotnet-ef
+dotnet clean
+dotnet build
+dotnet ef dbcontext scaffold "server=(localdb)\MSSQLLocalDB;database=AdventureWorks2016;Integrated Security=True " Microsoft.EntityFrameworkCore.SqlServer -o Models
+dotnet clean
+dotnet build
+
+rem dotnet ef dbcontext scaffold "server=musicagrupos.database.windows.net;user=as;password=P0t@t0P0t@to"  Security=True;Microsoft.EntityFrameworkCore.SqlServer -o Models
