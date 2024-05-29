@@ -30,6 +30,18 @@ namespace AdventureWorks.Controllers
             var consulta = _context.Products;
             //var elemento = _factoria.dameInstancia(EnumeracionEjercicios.Ejercicio1);
             //var elemento = _factoria.dameInstancia(EnumeracionEjercicios.Ejercicio2);
+            //var elemento = _factoria.dameInstancia(EnumeracionEjercicios.Ejercicio4);
+            var elemento = _factoria.dameInstancia(EnumeracionEjercicios.Ejercicio3);
+            var consultaFinal = (elemento as IProductoQuery).dameProductos(consulta);
+            return View(consultaFinal);
+        }
+        public async Task<IActionResult> IndexEjercicio01()
+        {
+
+            var adventureWorks2016Context = _context.Products.Include(p => p.ProductModel).Include(p => p.ProductSubcategory).Include(p => p.SizeUnitMeasureCodeNavigation).Include(p => p.WeightUnitMeasureCodeNavigation);
+            var consulta = _context.Products;
+            //var elemento = _factoria.dameInstancia(EnumeracionEjercicios.Ejercicio1);
+            //var elemento = _factoria.dameInstancia(EnumeracionEjercicios.Ejercicio2);
             //var elemento = _factoria.dameInstancia(EnumeracionEjercicios.Ejercicio3);
             var elemento = _factoria.dameInstancia(EnumeracionEjercicios.Ejercicio4);
             var consultaFinal = (elemento as IProductoQuery).dameProductos(consulta);
