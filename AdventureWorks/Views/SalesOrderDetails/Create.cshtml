@@ -1,0 +1,60 @@
+﻿@model AdventureWorks.Models.SalesOrderDetail
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>SalesOrderDetail</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="SalesOrderId" class="control-label"></label>
+                <select asp-for="SalesOrderId" class ="form-control" asp-items="ViewBag.SalesOrderId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="CarrierTrackingNumber" class="control-label"></label>
+                <input asp-for="CarrierTrackingNumber" class="form-control" />
+                <span asp-validation-for="CarrierTrackingNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OrderQty" class="control-label"></label>
+                <input asp-for="OrderQty" class="form-control" />
+                <span asp-validation-for="OrderQty" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductId" class="control-label"></label>
+                <select asp-for="ProductId" class ="form-control" asp-items="ViewBag.ProductId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="SpecialOfferId" class="control-label"></label>
+                <select asp-for="SpecialOfferId" class ="form-control" asp-items="ViewBag.SpecialOfferId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="UnitPrice" class="control-label"></label>
+                <input asp-for="UnitPrice" class="form-control" />
+                <span asp-validation-for="UnitPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UnitPriceDiscount" class="control-label"></label>
+                <input asp-for="UnitPriceDiscount" class="form-control" />
+                <span asp-validation-for="UnitPriceDiscount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
