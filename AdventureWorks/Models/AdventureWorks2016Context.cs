@@ -3266,5 +3266,5 @@ public partial class AdventureWorks2016Context : DbContext
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 
-public DbSet<AdventureWorks.ViewModels.SaleOrderViewModel> SaleOrderViewModel { get; set; } = default!;
+
 }

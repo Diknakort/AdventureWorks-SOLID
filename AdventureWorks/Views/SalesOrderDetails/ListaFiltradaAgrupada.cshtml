@@ -1,0 +1,58 @@
+﻿@using Microsoft.EntityFrameworkCore.Query.Internal
+@model IEnumerable<AdventureWorks.ViewModels.ColorViewModel>
+
+@{
+    ViewData["Title"] = "ListaFiltradaAgrupada";
+}
+
+<h1>ListaFiltradaAgrupada</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ColorProducto)
+            </th>
+            <th>ID de producto </th>
+            <th>Nombre de producto </th>
+            <th>Unidades Vendidas de producto </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                
+                    @Html.DisplayFor(modelItem => item.ColorProducto)
+                </td>
+            </tr>
+            <tr>
+                @foreach (var hijo in item.Hijas)
+                {
+                <tr>
+                    <td>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelITem => hijo.CodigoProducto)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelITem => hijo.NombreProducto)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelITem => hijo.UnidadesVendidas)
+                    </td>
+                </tr>
+                }
+
+
+
+
+            </tr>
+
+        }
+    </tbody>
+</table>

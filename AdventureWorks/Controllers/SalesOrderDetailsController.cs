@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using AdventureWorks.Models;
+using AdventureWorks.Services;
 using AdventureWorks.ViewModels;
 
 namespace AdventureWorks.Controllers
@@ -42,26 +43,23 @@ namespace AdventureWorks.Controllers
         }
         public async Task<IActionResult> ListaFiltrada()
         {
-            var resultado = from Sale in _context.SalesOrderDetails.Take(500)
-                join Prod in _context.Products
-                    on Sale.SalesOrderDetailId equals Prod.ProductId
-                select new SaleOrderViewModel()
-                {
-                    Id = Sale.SalesOrderDetailId,
-                    CodigoProducto = Sale.ProductId,
-                    NombreProducto = Prod.Name,
-                    ColorProducto = Prod.Color
-                };
-
-
-
-
-            //var adventureWorks2016Context = _context.SalesOrderDetails.Include(s => s.SalesOrder).Include(s => s.SpecialOfferProduct);
-            //return View(await adventureWorks2016Context.ToListAsync());
-            return View(resultado);
-
+            //var resultado = from Sale in _context.SalesOrderDetails
+            //    join Prod in _context.Products
+            //        on Sale.SalesOrderDetailId equals Prod.ProductId
+            //        orderby Prod.Name, Prod.Color
+            //    select new SaleOrderViewModel()
+            //    {
+            //        Id = Sale.SalesOrderDetailId,
+            //        ColorProducto = Prod.Color,
+            //        UnidadesVendidas = Sale.OrderQty,
+            //    };
+            return View(null);
         }
-
+        public async Task<IActionResult> ListaFiltradaAgrupada()
+        {
+            
+            return View(new ProductViewModelBuilder(this._context).dameProductViewModel());
+        }
         // GET: SalesOrderDetails/Details/5
         public async Task<IActionResult> Details(int? id)
         {

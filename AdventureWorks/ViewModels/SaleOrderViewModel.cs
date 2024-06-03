@@ -1,20 +1,16 @@
 ﻿namespace AdventureWorks.ViewModels
 {
-    public class SaleOrderViewModel
+    public class ColorViewModel
     {
-        public int Id { get; set; }
-        public List<ClaseHija> Hijas { get; set; }
-        public int CodigoProducto { get; set; }
-        public string NombreProducto { get; set; }
+        public List<ClaseProductoVenta> Hijas { get; set; }
         public string ColorProducto { get; set; }
-
     }
 
-    public class ClaseHija
+    public class ClaseProductoVenta
     {
         public int Id { get; set; }
         public int CodigoProducto { get; set; }
         public string NombreProducto { get; set; }
-        public string ColorProducto { get; set; }
+        public int UnidadesVendidas { get; set; }
     }
 }
